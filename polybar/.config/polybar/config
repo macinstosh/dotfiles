@@ -1,0 +1,226 @@
+[colors]
+background = #1e1e1e
+background-alt = #212121
+foreground = #fafafa
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+trans = #DA292b2e
+white = #eee
+grey = #444444
+pink = #d75f87
+blue = #4f97d7
+purple = #875faf
+green = #20ad80
+red = #ee3333
+yellow = #d79921
+
+
+[bar/main]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 24
+offset-x = 0
+offset-y = 0
+radius = 0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2 
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Gohu GohuFont:pixelsize=13;2
+font-1 = unifont:fontformat=truetype:size=11:antialias=false;2
+font-2 = Wuncon Siji:size=8;1
+font-3 = Noto Sans CJK JP:size=10:antialias=true;0
+
+modules-left = i3
+;modules-center = xwindow
+modules-right = volume battery date time network powermenu
+
+tray-position = right
+tray-padding = 2
+
+[module/i3]
+type = internal/i3
+
+enable-click = true
+strip-wsnumbers = true
+
+ws-icon-0 = 1;a
+ws-icon-1 = 2;b
+ws-icon-2 = 3;c
+ws-icon-3 = 4;d
+ws-icon-4 = 5;e
+
+label-focused = %index%
+label-focused-foreground = #ffffff
+label-focused-background = #2f2f2f
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 1
+
+[module/battery]
+type = internal/battery
+interval = 5
+battery = BAT0
+adapter = AC
+full-at = 95
+
+format-full-prefix = " "
+format-full-prefix-foreground = #42A89A
+
+format-discharging-prefix = " "
+format-discharging-prefix-foreground = #42A89A
+
+format-charging = <animation-charging> <label-charging>
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = #42A89A
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%m/%d/%y"
+date-alt = "%a Week %V"
+
+time = %I:%M
+time-alt = %I:%M
+
+format-prefix = " "
+format-prefix-foreground = #F47A24
+
+label = %date%
+
+
+[module/time]
+type = internal/date
+interval = 5
+
+time = %I:%M
+format-prefix = " "
+format-prefix-foreground = #BF4A36
+label = %time%
+
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+
+format-muted = <label-muted>
+label-muted = 
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = #027AB6
+
+[module/network]
+type = internal/network
+interface = wlp58s0
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+; Test connectivity every Nth update
+; A value of 0 disables the feature
+; NOTE: Experimental (needs more testing)
+; Default: 0
+;ping-interval = 3
+
+; Accumulate values from all interfaces
+; when querying for up/downspeed rate
+; Default: false
+accumulate-stats = true
+
+; Consider an `UNKNOWN` interface state as up.
+; Some devices have an unknown state, even when they're running
+; Default: false
+unknown-as-up = true
+
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %essid%
+label-disconnected = disconnected
+
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.red}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.yellow}
+ramp-signal-2 = 
+ramp-signal-2-foreground = ${colors.green}
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = hibernate
+menu-0-2-exec = menu-open-3
+menu-0-3 = suspend
+menu-0-3-exec = menu-open-4
+menu-0-4 = log out
+menu-0-4-exec = menu-open-5
+
+menu-1-0 = do it!
+menu-1-0-exec = systemctl reboot
+
+menu-2-0 = do it!
+menu-2-0-exec = systemctl poweroff
+
+menu-3-0 = do it!
+menu-3-0-exec = systemctl hibernate
+
+menu-4-0 = do it!
+menu-4-0-exec = systemctl suspend
+
+menu-5-0 = do it!
+menu-5-0-exec = i3-msg exit
+
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
