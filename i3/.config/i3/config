@@ -1,16 +1,33 @@
-# Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+# Define colors
+set_from_resource $fg	foreground
+set_from_resource $bg	background
+#red
+set_from_resource $c1	color1
+set_from_resource $c9	color9
+#green
+set_from_resource $c2	color2
+set_from_resource $c10	color10
+#yellow
+set_from_resource $c3	color3
+set_from_resource $c11	color11
+#blue
+set_from_resource $c4	color4
+set_from_resource $c12	color12
+#magenta
+set_from_resource $c5	color5
+set_from_resource $c13	color13
+#cyan
+set_from_resource $c6	color6
+set_from_resource $c14	color14
+#white
+set_from_resource $c7	color7
+set_from_resource $c15	color15
 
-#Mod key set to Win key
+# Mod key set to Win key
 set $mod Mod4
 
-# set desktop background with custom effect
-# exec --no-startup-id betterlockscreen -w dim
-
 # Set wallpaper
-exec_always --no-startup-id feh --bg-fill /home/amy/Pictures/bqeMqBT.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/bqeMqBT.png
 
 # Start compton
 exec --no-startup-id compton --backend glx
@@ -187,7 +204,7 @@ for_window [class="^.*"] border pixel 3
 hide_edge_borders smart
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #136e89 #285577 #ffffff #136e89   #ffffff
+client.focused		$fg	$bg	#ffffff	#136e89   #ffffff
 client.focused_inactive #e5e5e5 #5f676a #ffffff #e5e5e5   #2e4045
 client.unfocused        #e5e5e5 #222222 #888888 #e5e5e5   #2e4045
 client.urgent           #2f343a #900000 #ffffff #900000   #900000  
