@@ -204,11 +204,11 @@ for_window [class="^.*"] border pixel 3
 hide_edge_borders smart
 
 # class                 border  backgr. text    indicator child_border
-client.focused		$fg	$bg	$fg	$fg	  $fg
-client.focused_inactive $fg	$bg	$fg	$fg	  $fg
-client.unfocused        $fg	$bg	$fg	$fg	  $bg
-client.urgent           $c1	$bg	$fg	$fg	  $c1  
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused		$bg	$bg	$fg	$bg	  $fg
+client.focused_inactive $bg	$bg	$fg	$bg	  $bg
+client.unfocused        $bg	$bg	$fg	$bg	  $bg
+client.urgent           $c1	$bg	$fg	$bg	  $c1  
+client.placeholder      $bg	$bg	$fg	$bg	  $bg
 
 gaps inner 10
 gaps outer 0
