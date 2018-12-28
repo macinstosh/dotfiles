@@ -1,4 +1,4 @@
-#include ".config/colors/default"
+#include ".config/colors/solarized_dark"
 
 URxvt*font: xft:Gohu GohuFont:style=Regular:size=11
 URxvt.scrollBar: false
