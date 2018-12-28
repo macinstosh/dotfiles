@@ -23,11 +23,11 @@ set_from_resource $c14	color14
 set_from_resource $c7	color7
 set_from_resource $c15	color15
 
+# Set wallpaper
+exec_always --no-startup-id feh --bg-fill ~/wal/oranje.png
+
 # Mod key set to Win key
 set $mod Mod4
-
-# Set wallpaper
-exec_always --no-startup-id feh --bg-fill ~/Pictures/bqeMqBT.png
 
 # Start compton
 exec --no-startup-id compton --backend glx
@@ -204,10 +204,10 @@ for_window [class="^.*"] border pixel 3
 hide_edge_borders smart
 
 # class                 border  backgr. text    indicator child_border
-client.focused		$fg	$bg	#ffffff	#136e89   #ffffff
-client.focused_inactive #e5e5e5 #5f676a #ffffff #e5e5e5   #2e4045
-client.unfocused        #e5e5e5 #222222 #888888 #e5e5e5   #2e4045
-client.urgent           #2f343a #900000 #ffffff #900000   #900000  
+client.focused		$fg	$bg	$fg	$fg	  $fg
+client.focused_inactive $fg	$bg	$fg	$fg	  $fg
+client.unfocused        $fg	$bg	$fg	$fg	  $bg
+client.urgent           $c1	$bg	$fg	$fg	  $c1  
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 gaps inner 10
