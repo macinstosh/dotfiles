@@ -1,4 +1,4 @@
-#include "~/.config/colors/default"
+#include "/home/amy/.config/colors/default"
 
 URxvt*font: xft:Gohu GohuFont:style=Regular:size=11
 URxvt.scrollBar: false
