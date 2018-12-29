@@ -1,0 +1,46 @@
+configuration {
+  display-run: "run ";
+	display-drun: "run";
+	width: 40;
+	lines: 4;
+	columns: 2;
+	bw: 0;
+	location: 0;
+  show-icons: true;
+  modi: "drun,run,window";
+}
+
+* {
+	font: "Gohu GohuFont 11";
+	background-color: #ffffff;
+	text-color: #aaaaaa;
+	separator-style: none;
+	hide-scrollbar: true;
+}
+
+window {
+  fullscreen: false;
+  children: [mainbox];
+}
+
+mainbox {
+  background-color: transparent;
+  children: [entry, listview];
+}
+
+entry {
+  expand: false;
+}
+
+prompt {
+	color: #ca4c7a;
+}
+
+element, inputbar {
+	padding: 4 6;
+}
+
+element selected {
+	background-color: #ca4c7a;
+	text-color: #ffffff;
+}
