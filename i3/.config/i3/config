@@ -24,7 +24,7 @@ set_from_resource $c7	color7
 set_from_resource $c15	color15
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-fill ~/wal/waves.png
+exec_always --no-startup-id feh --bg-fill ~/wal/oranje.png
 
 # Mod key set to Win key
 set $mod Mod4
