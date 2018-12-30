@@ -1,39 +1,35 @@
 configuration {
-  display-run: "run ";
-	display-drun: "run";
-	width: 40;
-	lines: 4;
+	display-run: "run ";
 	columns: 2;
-	bw: 0;
-	location: 0;
-  show-icons: true;
-  modi: "drun,run,window";
 }
 
 * {
 	font: "Gohu GohuFont 11";
-	background-color: #ffffff;
-	text-color: #aaaaaa;
+	background-color: #2e3440;
+	text-color: #d9dee9;
 	separator-style: none;
 	hide-scrollbar: true;
 }
 
 window {
-  fullscreen: false;
-  children: [mainbox];
+	height: 30%;
+	width: 40%;
+	border: 3 px;
+	border-color: #d8dee9;
+	children: [mainbox];
 }
 
 mainbox {
-  background-color: transparent;
-  children: [entry, listview];
+	background-color: transparent;
+	children: [entry, listview];
 }
 
 entry {
-  expand: false;
+	expand: false;
 }
 
 prompt {
-	color: #ca4c7a;
+	color: #ebcb8b;
 }
 
 element, inputbar {
@@ -41,6 +37,8 @@ element, inputbar {
 }
 
 element selected {
-	background-color: #ca4c7a;
-	text-color: #ffffff;
+	background-color: #ebcb8b;
+	text-color: #2e3440;
 }
+
+/* vim:ft=css
