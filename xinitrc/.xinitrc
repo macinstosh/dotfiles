@@ -55,7 +55,7 @@ xterm -geometry 80x20+494-0 &
 exec xterm -geometry 80x66+0+0 -name login
 
 # siji
-xset +fp /home/amy/.fonts
+xset +fp $HOME/.fonts
 xset fp rehash
 
 # set desktop background with custom effect
