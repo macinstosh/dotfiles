@@ -9,7 +9,7 @@
     show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
-    geometry = "200x5-10+34"
+    geometry = "300x5-10+34"
     transparency = 0
     idle_threshold = 120
     monitor = 0
@@ -33,9 +33,9 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    frame_color = "#d8dee9"
-    background = "#2e3440"
-    foreground = "#d8dee9"
+    frame_color = "#d9dee9"
+    background = "#ebcb8b"
+    foreground = "#2e3440"
     timeout = 5
 
 [urgency_normal]
