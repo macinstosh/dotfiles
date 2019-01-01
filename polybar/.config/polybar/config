@@ -48,7 +48,7 @@ font-2 = Wuncon Siji:size=8;1
 font-3 = Noto Sans CJK JP:size=10:antialias=true;0
 
 modules-left = i3
-modules-right = volume battery date time network powermenu
+modules-right = volume battery cpu date time network powermenu
 
 tray-position = right
 tray-padding = 2
@@ -58,25 +58,28 @@ type = internal/i3
 
 enable-click = true
 strip-wsnumbers = true
+index-sort = true
+pin-workspaces = true
 
-ws-icon-0 = 1;a
-ws-icon-1 = 2;b
-ws-icon-2 = 3;c
-ws-icon-3 = 4;d
-ws-icon-4 = 5;e
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-default = 
 
-label-focused = %index%
+label-focused = %icon%
 label-focused-foreground = ${colors.background}
 label-focused-background = ${colors.foreground}
 label-focused-padding = 1
 
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = 1
 
-label-visible = %index%
+label-visible = %icon%
 label-visible-padding = 1
 
-label-urgent = %index%
+label-urgent = %icon%
 label-urgent-foreground = ${colors.background}
 label-urgent-background = ${colors.red}
 label-urgent-padding = 1
@@ -141,6 +144,14 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.blue}
+
+[module/cpu]
+type = internal/cpu
+interval = 1;
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.cyan}
+label = CPU %percentage%%
 
 [module/network]
 type = internal/network
