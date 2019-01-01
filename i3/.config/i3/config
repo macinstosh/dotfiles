@@ -222,12 +222,12 @@ bindsym $mod+Shift+F exec --no-startup-id urxvt -e ranger
 #for_window [instance="terminator" title="Life"] floating enable 
 
 # Assign programs to workspaces
-# programs assigned to workspace 1
-assign [class="Firefox"] $ws1
-assign [class="Chromium"] $ws1
+# programs assigned to workspace 3
+assign [class="Firefox"] $ws3
+assign [class="Chromium"] $ws3
 
-# programs assigned to workspace 2
-assign [class="URxvt"] $ws2
+# programs assigned to workspace 1
+assign [class="URxvt"] $ws1
 
 # programs assigned to workspace 5
 assign [class="mpv"] $ws5
