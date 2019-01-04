@@ -1,6 +1,6 @@
 #include ".config/colors/nord"
 
-URxvt*font: xft:Gohu GohuFont:style=Regular:size=11
+URxvt*font: xft:xos4 Terminess Powerline:style=Regular
 URxvt.scrollBar: false
 
 Xft.lcdfilter: lcddefault

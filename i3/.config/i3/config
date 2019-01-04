@@ -26,6 +26,9 @@ set_from_resource $c15	color15
 # Set wallpaper
 exec_always --no-startup-id feh --bg-fill ~/wal/oranje.png
 
+# Start terminal on startup
+exec --no-startup-id urxvt 
+
 # Mod key set to Win key
 set $mod Mod4
 
@@ -87,8 +90,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -218,16 +221,24 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 floating_maximum_size 1800 x 1000
 
 # launch ranger in floating mode
-bindsym $mod+Shift+F exec --no-startup-id urxvt -e ranger
-#for_window [instance="terminator" title="Life"] floating enable 
+bindsym $mod+Shift+F exec --no-startup-id urxvt -t ranger -e ranger
 
 # Assign programs to workspaces
+# programs assigned to workspace 1
+for_window [class="URxvt"] floating enable
+assign [class="JDownloader"] $ws1
+for_window [class="JDownloader"] floating enable
+
+# programs assigend to workspace 2
+assign [class="Thunar"] $ws2
+for_window [class="Thunar"] floating enable
+assign [title="ranger"] $ws2
+
 # programs assigned to workspace 3
 assign [class="Firefox"] $ws3
 assign [class="Chromium"] $ws3
 
-# programs assigned to workspace 1
-assign [class="URxvt"] $ws1
+# programs assigned to workspace 4
 
 # programs assigned to workspace 5
 assign [class="mpv"] $ws5
