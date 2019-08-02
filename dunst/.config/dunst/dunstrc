@@ -1,5 +1,5 @@
 [global]
-    font = "Gohu GohuFont 12"
+    font = "Ubuntu Mono 11"
     allow_markup = yes
     format = "<b>%s</b>\n%b"
     sort = yes
