@@ -1,24 +1,16 @@
-[colors]
-background = ${xrdb:background}
-foreground = ${xrdb:foreground}
-darkblack = ${xrdb:color0}
-black = ${xrdb:color8}
-darkred = ${xrdb:color1}
-red = ${xrdb:color9}
-darkgreen = ${xrdb:color2}
-green = ${xrdb:color10}
-darkyellow = ${xrdb:color3}
-yellow = ${xrdb:color11}
-darkblue = ${xrdb:color4}
-blue = ${xrdb:color12}
-darkmagenta = ${xrdb:color5}
-magenta = ${xrdb:color13}
-darkcyan = ${xrdb:color6}
-cyan = ${xrdb:color14}
-darkwhite = ${xrdb:color7}
-white  = ${xrdb:color15}
+;Include Files
+include-file = ~/.config/polybar/colors
+include-file = ~/.config/polybar/modules
 
-[bar/main]
+[settings]
+screenchange-reload = true
+pseudo-transparency = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[bar/i3]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 24
@@ -42,197 +34,33 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-;font-0 = xos4 Terminus:size=13;2
-font-0 = Gohu GohuFont:pixelsize=13;2
+font-0 = xos4 Terminus:size=11;1
+;font-0 = Gohu GohuFont:size=14;1
 font-1 = unifont:fontformat=truetype:size=11:antialias=false;2
 font-2 = Wuncon Siji:size=8;1
 font-3 = Noto Sans CJK JP:size=10:antialias=true;0
 
 modules-left = i3
-modules-right = cpu volume battery date time network powermenu
+modules-right = volume battery date time network powermenu
 
 tray-position = right
 tray-padding = 2
- 
-[module/i3]
-type = internal/i3
 
-enable-click = true
-strip-wsnumbers = true
-index-sort = true
-pin-workspaces = true
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-;ws-icon-default = 
-ws-icon-default = 
-
-label-focused = %icon%
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.foreground}
-label-focused-padding = 1
-
-label-unfocused = %icon%
-label-unfocused-padding = 1
-
-label-visible = %icon%
-label-visible-padding = 1
-
-label-urgent = %icon%
-label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.red}
-label-urgent-padding = 1
-
-[module/battery]
-type = internal/battery
-interval = 5
-battery = BAT0
-adapter = AC
-full-at = 95
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.green}
-
-format-discharging-prefix = " "
-format-discharging-prefix-foreground = ${colors.green}
-
-format-charging = <animation-charging> <label-charging>
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.green}
-animation-charging-framerate = 750
-
-[module/date]
-type = internal/date
-interval = 5
-
-date = "%m/%d/%y"
-date-alt = "%a Week %V"
-
-time = %I:%M
-time-alt = %I:%M
-
-format-prefix = " "
-format-prefix-foreground = ${colors.magenta}
-
-label = %date%
-
-
-[module/time]
-type = internal/date
-interval = 5
-
-time = %I:%M
-format-prefix = " "
-format-prefix-foreground = ${colors.darkred}
-label = %time%
-
-
-[module/volume]
-type = internal/volume
-
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%%
-
-format-muted = <label-muted>
-label-muted = 
-label-muted-foreground = #666666
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-foreground = ${colors.blue}
-
-[module/cpu]
-type = internal/cpu
-interval = 1;
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.cyan}
-label = CPU %percentage%%
-
-[module/network]
-type = internal/network
-interface = wlp58s0
-
-; Seconds to sleep between updates
-; Default: 1
-interval = 3.0
-
-; Test connectivity every Nth update
-; A value of 0 disables the feature
-; NOTE: Experimental (needs more testing)
-; Default: 0
-;ping-interval = 3
-
-; Accumulate values from all interfaces
-; when querying for up/downspeed rate
-; Default: false
-accumulate-stats = true
-
-; Consider an `UNKNOWN` interface state as up.
-; Some devices have an unknown state, even when they're running
-; Default: false
-unknown-as-up = true
-
-format-connected = <ramp-signal> <label-connected>
-format-disconnected = <label-disconnected>
-label-connected = %essid%
-label-disconnected = disconnected
-
-ramp-signal-0 = 
-ramp-signal-0-foreground = ${colors.red}
-ramp-signal-1 = 
-ramp-signal-1-foreground = ${colors.yellow}
-ramp-signal-2 = 
-ramp-signal-2-foreground = ${colors.green}
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.red}
-label-close =  cancel
-label-close-foreground = ${colors.red}
-label-separator = |
-label-separator-foreground = ${colors.foreground}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = hibernate
-menu-0-2-exec = menu-open-3
-menu-0-3 = suspend
-menu-0-3-exec = menu-open-4
-menu-0-4 = log out
-menu-0-4-exec = menu-open-5
-
-menu-1-0 = do it!
-menu-1-0-exec = systemctl reboot
-
-menu-2-0 = do it!
-menu-2-0-exec = systemctl poweroff
-
-menu-3-0 = do it!
-menu-3-0-exec = systemctl hibernate
-
-menu-4-0 = do it!
-menu-4-0-exec = systemctl suspend
-
-menu-5-0 = do it!
-menu-5-0-exec = i3-msg exit
-
-
-[settings]
-screenchange-reload = true
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
+[bar/openbox]
+override-redirect = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+width = 800
+height = 24
+offset-x = 12
+offset-y = 12
+radius = 0
+padding = 1 
+bottom = true 
+modules-left = workspaces
+modules-right = volume battery time
+font-0 = DejaVu Sans:size=12;2
+tray-position = right
+tray-detached = true
+tray-offset-x = 80
+tray-padding = 1
