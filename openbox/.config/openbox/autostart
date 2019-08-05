@@ -3,9 +3,13 @@
 # You may place a similar script in $HOME/.config/openbox/autostart
 # to run user-specific things.
 
-$HOME/.config/polybar/launchob.sh
-feh --bg-fill ~/dotfiles/wallpaper/wal/oranje.png
-compton --backend glx
-udiskie --use-udisks2
-dropbox
-nm-applet
+$HOME/.config/polybar/launchob.sh &
+feh --bg-fill ~/dotfiles/wallpaper/wal/oranje.png &
+tint2 -c ~/dotfiles/tint2/.config/tint2/taskbar.tint2rc &
+tint2 -c ~/dotfiles/tint2/.config/tint2/systemtray.tint2rc &
+compton --backend glx &
+udiskie --use-udisks2 &
+dropbox &
+nm-applet &
+redshift-gtk &
+kdeconnect-indicator &

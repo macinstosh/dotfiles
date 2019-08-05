@@ -17,3 +17,5 @@ darkcyan = ${xrdb:color6}
 cyan = ${xrdb:color14}
 darkwhite = ${xrdb:color7}
 white  = ${xrdb:color15}
+
+accent = #f47a24
